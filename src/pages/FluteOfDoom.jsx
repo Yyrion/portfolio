@@ -20,7 +20,7 @@ function FuDPage() {
                             <s>Accéder au projet</s>
                         </a>
                     </div>
-                    <h2 className='text-xl'>Novembre 2024 - En cours de développement</h2>
+                    <h2 className='text-xl'>Novembre 2024 - Abandonné</h2>
                     <p className='py-4'>Un jeu vidéo développé en équipe à l'occasion de la GameJam "GameOff 2024". J'ai servi dans ce projet de Level Designer en parallèle de mon rôle de développeur. 
                     </p>
                     <h2 className='text-xl py-3'>Technologies utilisées</h2>
@@ -32,9 +32,9 @@ function FuDPage() {
                         <TechLabel technology="Level Design" />
                     </div>
                     {/*Affichage des images*/}
-                    <h2 className='text-xl py-3'>Image du projets</h2>
+                    <h2 className='text-xl py-3'>Images du projet</h2>
                     <div className='flex inline-flex'>
-                        *Aucune image du jeu n'est disponible pour le moment*
+                        <i>Aucune image du jeu n'est disponible pour le moment</i>
                     </div>
                 </div>
             </div>

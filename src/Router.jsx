@@ -7,6 +7,7 @@ import Home from "./pages/Home"
 import FuDPage from "./pages/FluteOfDoom"
 import GaDPage from "./pages/GreedAndDarkness"
 import './index.css'
+import CiRPage from "./pages/ClockIsRunning";
   
   const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ import './index.css'
     {
       path:"/greedanddarkness",
       element: <GaDPage />
+    },
+    {
+      path:"/theclockisrunning",
+      element: <CiRPage />
     }
   ])
   

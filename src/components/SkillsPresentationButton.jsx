@@ -16,11 +16,12 @@ function SkillMenu() {
     <div className="flex flex-col space-y-12 p-4 text-black min-h-full items-center justify-center">
         <div className='lg:justify-between space-x-8 text-8xl inline-flex'>
             {/*Bouton Unity */}
-            <button type='button' aria-label='Unity' onClick={()=>{setTech('unity')}} className={`hover:bg-zinc-300  text-6xl z-40 outline-1 outline outline-black p-4 rounded-full h-min bg-white aspect-square ${(tech === "unity") ? "bg-zinc-500" : ""}`}>
+            <button tabIndex='0' type='button' aria-label='Unity' onClick={()=>{setTech('unity')}} className={`hover:bg-zinc-300  text-6xl z-40 outline-1 outline outline-black p-4 rounded-full h-min bg-white aspect-square ${(tech === "unity") ? "bg-zinc-500" : ""}`}>
                 <FaUnity />
             </button>
             {/*Bouton Java */}
             <button 
+                tabIndex='0'
                 type='button' aria-label='Java'
                 onClick={() => setTech('java')} 
                 className={`hover:bg-zinc-300  text-6xl z-40 outline-1 outline outline-black p-4 rounded-full h-min bg-white aspect-square ${tech === "java" ? "bg-zinc-500" : ""}`}
@@ -31,11 +32,11 @@ function SkillMenu() {
 
         <div className='lg:justify-between space-x-8 text-8xl inline-flex mb-8'>
             {/*Bouton Godot Engine */}
-            <button type='button' aria-label='Godot Engine' onClick={()=>setTech('godotengine')} className={`hover:bg-zinc-300 text-6xl z-40 outline-1 outline outline-black p-4 rounded-full h-min bg-white aspect-square ${(tech === "godotengine") ? "bg-zinc-500" : ""}`}>
+            <button tabIndex='0' type='button' aria-label='Godot Engine' onClick={()=>setTech('godotengine')} className={`hover:bg-zinc-300 text-6xl z-40 outline-1 outline outline-black p-4 rounded-full h-min bg-white aspect-square ${(tech === "godotengine") ? "bg-zinc-500" : ""}`}>
                 <SiGodotengine />
             </button>
             {/*Bouton Python */}
-            <button type='button' aria-label='Python' onClick={()=>setTech('python')} className={`hover:bg-zinc-300  text-6xl z-40 outline-1 outline outline-black p-4 rounded-full h-min bg-white aspect-square ${(tech === "python") ? "bg-zinc-500" : ""}`}>
+            <button tabIndex='0' type='button' aria-label='Python' onClick={()=>setTech('python')} className={`hover:bg-zinc-300  text-6xl z-40 outline-1 outline outline-black p-4 rounded-full h-min bg-white aspect-square ${(tech === "python") ? "bg-zinc-500" : ""}`}>
                 <FaPython />
             </button>
         </div>
