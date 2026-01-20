@@ -19,7 +19,7 @@ export default function ProjectContainer({ project }: ProjectContainerProps) {
                     <span className="text-gray-400">Pas d'image</span>
                 )}
             </div>
-            <h3 className="text-xl font-semibold mb-2 text-lime-400">{project.title}</h3>
+            <h3 className="text-xl font-semibold mb-2 text-[#4b5043]">{project.title}</h3>
             <p className="text-gray-600 mt-2">{project.desc}</p>
         </div>
     );

@@ -8,11 +8,11 @@ type ButtonProps = {
 
 function DefaultButton({children, onClick, isPrimary = false}: ButtonProps) {
 
-    const primaryClasses = "bg-lime-500 text-white hover:bg-lime-600";
-    const secondaryClasses = "text-lime-500 bg-white outline outline-lime-500 hover:bg-gray-100";
+    const primaryClasses = "bg-[#4b5043] text-white hover:bg-[#4b5043]/90";
+    const secondaryClasses = "text-[#4b5043] bg-white outline outline-[#4b5043] hover:bg-gray-100";
 
     return <>
-    <button onClick={onClick} className={`cursor-pointer rounded-sm px-[1em] py-[0.2em] items-center justify-center ${isPrimary ? primaryClasses : secondaryClasses }`}>
+    <button onClick={onClick} className={`cursor-pointer rounded-sm px-[1em] py-[0.2em] max-w-[10em] items-center justify-center ${isPrimary ? primaryClasses : secondaryClasses }`}>
         {children}
     </button>
     </>

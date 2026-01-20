@@ -19,24 +19,23 @@ function App() {
 
   return (
     <>
-      <main className="min-h-[calc(100vh-4em)] w-full flex flex-col items-center gap-[3em] pt-[0em]">
+      <main className={`mb-[6em] min-h-[calc(100vh-4em)] w-full flex flex-col items-center gap-[2em] pt-[0em]`}>
       <NavigationMenu />
 
       {/** Section Accueil */}
       <section id="accueil" className="w-7/8 h-auto flex flex-col items-center justify-center">
 
-        <div className="bg-lime-100 outline outline-2 outline-gray-700 rounded-full w-full aspect-square flex items-center justify-center">
+        <div className="bg-[#4b5043]/10 outline outline-2 outline-[#4b5043] rounded-full w-full aspect-square flex items-center justify-center">
           <img src="" alt="Portrait d'Ewen RONDIN"/>
         </div>
 
-        <div className='w-full mt-[1em] flex-col items-start justify-center'>
-          <h2 className="font-semibold text-left text-2xl">Ewen Rondin</h2>
-          <p className='text-left'>Actuellement <strong className="font-semibold text-lime-400">
+        <div className='w-full mt-[1em] flex flex-col items-start justify-center'>
+          <p className='text-left'>Actuellement <strong className="font-semibold text-[#4b5043]">
             étudiant </strong>
-            en <strong className="font-semibold text-lime-400">
+            en <strong className="font-semibold text-[#4b5043]">
               développement informatique
             </strong>, je souhaite dans le futur me spécialiser dans le développement 
-            <strong className="font-semibold text-lime-400"> full-stack</strong>.</p>
+            <strong className="font-semibold text-[#4b5043]"> full-stack</strong>.</p>
         </div>
       </section>
 
@@ -76,14 +75,34 @@ function App() {
       <section id="skills" className="w-7/8"></section>
 
       {/** Section contact */}
-      <section id="contact" className="w-7/8 flex flex-col">
-      <h2 className="text-2xl w-full font-semibold">Pour me contacter, c'est ici.</h2>
-      <form className="flex flex-col w-full gap-[0.5em]">
-        <label className="text-gray-700 text-sm">Votre e-mail</label>
-        <input placeholder="example@mail.com" />
-        <label className="text-gray-700 text-sm">Votre Message</label>
-        <textarea placeholder="Entrez votre message ici..." />
+      <section id="contact" className="w-7/8 flex flex-col mb-[2em]">
+      <h2 className="text-2xl w-full font-semibold mb-[1em]">Pour me contacter, c'est ici.</h2>
+      <form className="flex flex-col w-full gap-[1em]">
+        <div className="flex flex-col gap-[0.25em]">
+          <label id='email-label' className="text-gray-700 text-sm font-medium">Votre e-mail</label>
+          <input 
+            type="email"
+            placeholder="example@mail.com" 
+            aria-labelledby='email-label'
+            className="px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#4b5043] transition-colors"
+          />
+        </div>
+        <div className="flex flex-col gap-[0.25em]">
+          <label id='message-label' className="text-gray-700 text-sm font-medium">Votre Message</label>
+          <textarea 
+            placeholder="Entrez votre message ici..." 
+            aria-labelledby='message-label'
+            rows={6}
+            className="px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#4b5043] transition-colors resize-none"
+          />
+        </div>
+        <div className='flex justify-end'>
+          <DefaultButton isPrimary={true}>
+            Envoyer
+          </DefaultButton>
+        </div>
       </form>
+
       </section>
 
       </main>
