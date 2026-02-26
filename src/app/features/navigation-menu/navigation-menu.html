@@ -1,0 +1,19 @@
+@if (isDesktop()) {
+  <header>
+    Desktop layout
+  </header>
+} @else {
+  <button
+    type="button"
+    (click)="toggleNavigationMenu()"
+    [attr.aria-expanded]="isNavigationMenuOpen()"
+    aria-controls="mobile-menu"
+  >
+    Toggle Menu
+  </button>
+  @if (isNavigationMenuOpen()) {
+    <div id="mobile-menu" class="mobile-menu" [attr.aria-hidden]="false">
+      Mobile layout
+    </div>
+  }
+}

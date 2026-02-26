@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  /*Couleurs principales*/
+
+  /*Gris*/
+  --gray-main: #D9D9D9;
+  /*Vert*/
+  --green-main: #2A3635;
+  --green-hover: #344544;
+  --green-active: #1E2A29;
+  --green-focus: #4F6B68;
+  /*Noir*/
+  --black-main: #000000;
+
+  /*Screen Breakpoints*/
+  --breakpoint-small: 600px;
+  --breakpoint-medium: 900px;
+}
