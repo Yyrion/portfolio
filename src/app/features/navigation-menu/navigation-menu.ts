@@ -1,5 +1,6 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy, signal, effect } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { NavigationService } from '../../services/navigation.service';
 
 @Component({
   selector: 'app-navigation-menu',
@@ -9,9 +10,9 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 })
 export class NavigationMenu implements OnInit {
   private breakpointObserver = inject(BreakpointObserver);
+  private navigationService = inject(NavigationService);
 
   readonly isDesktop = signal(false);
-
   readonly isNavigationMenuOpen = signal(false);
 
   ngOnInit() {
@@ -23,5 +24,10 @@ export class NavigationMenu implements OnInit {
 
   toggleNavigationMenu() {
     this.isNavigationMenuOpen.update((open) => !open);
+  }
+
+  navigateTo(sectionId: string): void {
+    this.navigationService.scrollToSection(sectionId);
+    this.isNavigationMenuOpen.set(false);
   }
 }

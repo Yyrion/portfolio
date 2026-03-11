@@ -1,0 +1,27 @@
+<section id="projects" class="section section-gray">
+  <div class="container projects-container">
+    <h2>Mes Projets</h2>
+
+    <swiper-container
+      class="swiper-container"
+      [slidesPerView]="1"
+      [spaceBetween]="20"
+      (swiperslidechange)="onSwiperSlideChange($event)">
+      @for (project of projectsList; track $index) {
+        <swiper-slide>  
+          <app-project-preview-component [projectPreview]="project"></app-project-preview-component>
+        </swiper-slide>
+      }
+    </swiper-container>
+
+    <div class="carousel__dots" aria-label="Indicateur de page">
+      @for (project of projectsList; track $index) {
+        <span
+          class="carousel__dot"
+          [class.carousel__dot--active]="$index === currentPageIndex"
+          [attr.aria-label]="'Page ' + ($index + 1)"
+        ></span>
+      }
+    </div>
+  </div>
+</section>

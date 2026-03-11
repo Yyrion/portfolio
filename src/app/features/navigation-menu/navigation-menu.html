@@ -1,19 +1,32 @@
 @if (isDesktop()) {
   <header>
-    Desktop layout
+    <nav>
+      <button type="button" (click)="navigateTo('home')">Accueil</button>
+      
+      <button type="button" (click)="navigateTo('projects')">Projets</button>
+      <button type="button" (click)="navigateTo('skills')">Compétences</button>
+      <button type="button" (click)="navigateTo('contact')">Contact</button>
+    </nav>
   </header>
 } @else {
   <button
+    class="mobile-menu-button"
     type="button"
     (click)="toggleNavigationMenu()"
     [attr.aria-expanded]="isNavigationMenuOpen()"
     aria-controls="mobile-menu"
+    aria-label="Ouvrir le menu de navigation"
   >
-    Toggle Menu
+    <span class="menu-icon"></span>
   </button>
   @if (isNavigationMenuOpen()) {
-    <div id="mobile-menu" class="mobile-menu" [attr.aria-hidden]="false">
-      Mobile layout
+    <div id="mobile-menu" [attr.aria-hidden]="false">
+      <nav id="menu-container">
+        <button type="button" (click)="navigateTo('home')">Accueil</button>
+        <button type="button" (click)="navigateTo('projects')">Projets</button>
+        <button type="button" (click)="navigateTo('skills')">Compétences</button>
+        <button type="button" (click)="navigateTo('contact')">Contact</button>
+      </nav>
     </div>
   }
 }

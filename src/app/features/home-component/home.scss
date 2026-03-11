@@ -1,0 +1,91 @@
+.home-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: center;
+  padding: 2em 0;
+
+  @media (min-width: 900px) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 4em;
+  }
+}
+
+.home-text {
+  flex: 1;
+  max-width: 40em;
+
+  h1 {
+    font-size: 2.5em;
+    line-height: 1.2;
+
+    @media (min-width: 900px) {
+      font-size: 3em;
+    }
+  }
+
+  h2 {
+    margin-bottom: 0.5em;
+  }
+
+  p {
+    font-size: 1.125em;
+    line-height: 1.6;
+  }
+}
+
+.home-avatar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--black-main);
+  max-width: 18em;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 0.15em solid var(--green-active);
+  background-color: var(--gray-main);
+  background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
+  overflow: hidden;
+  box-shadow: 0 0.5em 1.5em var(--shadow-medium);
+}
+
+.home-avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.home-scroll-indicator {
+  margin: 0 auto;
+  border: 0;
+  padding: 0;
+  background: none;
+  color: var(--white-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.home-scroll-indicator-icon {
+  width: 1.8em;
+  height: 1.8em;
+  color: var(--white-main);
+  animation: home-scroll-indicator-bounce 1.3s ease-in-out infinite;
+}
+
+@keyframes home-scroll-indicator-bounce {
+  0%,
+  100% {
+    transform: translateY(-0.15em);
+  }
+
+  50% {
+    transform: translateY(0.2em);
+  }
+}

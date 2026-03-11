@@ -1,0 +1,34 @@
+<section id="skills" class="section section-gray">
+  <div class="container">
+    <h2>Mes Compétences</h2>
+    <div class="skills-lines" aria-label="Catégories de compétences avec défilement horizontal">
+      @for (category of skillsCategories; track category.title) {
+        <article class="skill-line">
+          <h3>{{ category.title }}</h3>
+
+          <swiper-container
+            class="skill-swiper"
+            [attr.aria-label]="category.ariaLabel"
+            [slidesPerView]="'auto'"
+            [spaceBetween]="12"
+            [loop]="true"
+            [speed]="category.speed"
+            [freeMode]="true"
+            [autoplay]="true"
+            [attr.autoplay-delay]="0"
+            [attr.autoplay-disable-on-interaction]="false"
+            [attr.autoplay-pause-on-mouse-enter]="false"
+            [attr.autoplay-reverse-direction]="category.reverse"
+            [allowTouchMove]="true"
+          >
+            @for (skill of getLoopedSkills(category.skills); track $index) {
+              <swiper-slide class="skill-slide">
+                <span>{{ skill }}</span>
+              </swiper-slide>
+            }
+          </swiper-container>
+        </article>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<section id="home" class="section section-green">
+  <div class="container">
+    <div class="home-content">
+      <div class="home-avatar" aria-hidden="true">
+        <img class="home-avatar-image" src="/Portrait.jpg" alt="Photo d'Ewen Rondin" />
+      </div>
+      <div class="home-text">
+        <h1>Ewen Rondin</h1>
+        <h2>Développeur Full-Stack</h2>
+        <p>
+          <strong>Mon objectif</strong> : Réaliser des applications modernes, fluides et simples d'usage, tout en offrant la meilleure expérience utilisateur possible.
+        </p>
+      </div>
+    </div>
+    <button class="home-scroll-indicator" type="button" aria-label="Voir la suite du contenu" (click)="scrollToProjects()">
+      <lucide-icon
+        class="home-scroll-indicator-icon"
+        [img]="chevronDownIcon"
+        aria-hidden="true"
+      ></lucide-icon>
+    </button>
+  </div>
+</section>

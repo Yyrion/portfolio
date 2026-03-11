@@ -1,0 +1,28 @@
+<section id="contact" class="section section-green">
+  <div class="container">
+    <h2>Contact</h2>
+    <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email" />
+        @if (contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
+          <p class="error-message">Email invalide</p>
+        }
+      </div>
+      
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" formControlName="message" rows="5"></textarea>
+        @if (contactForm.get('message')?.invalid && contactForm.get('message')?.touched) {
+          <p class="error-message">Le message est requis (minimum 10 caractères)</p>
+        }
+      </div>
+      
+      <button type="submit" class="submit-button" [disabled]="contactForm.invalid">
+        <lucide-icon [img]="sendIcon" class="submit-button-icon"></lucide-icon>
+        Envoyer
+      </button>
+    </form>
+  </div>
+</section>

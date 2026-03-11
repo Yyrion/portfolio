@@ -1,0 +1,22 @@
+
+<article class="project-preview">
+  <div class="preview__header">
+    <h3 class="preview__title">{{ projectPreview.title }}</h3>
+  </div>
+
+  @if (projectPreview.imageUrl !== null) {
+    <div class="preview__image" [class.project-preview__image--empty]="!projectPreview.imageUrl">
+      <img [attr.src]="projectPreview.imageUrl" [alt]="projectPreview.title" />
+    </div>
+  }
+
+  <div class="preview__content">
+    <p class="preview__description">{{ projectPreview.shortDescription }}</p>
+  </div>
+
+  <div class="preview__tags">
+    @for (tag of projectPreview.tags; track $index) {
+      <span class="preview__tag">{{ tag }}</span>
+    }
+  </div>
+</article>

@@ -1,0 +1,69 @@
+h2 {
+  font-size: 2.5em;
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.skills-lines {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+}
+
+.skill-line {
+  background-color: rgba(42, 54, 53, 0.08);
+  border: 0.08em solid rgba(42, 54, 53, 0.2);
+  border-radius: 0.9em;
+  overflow: hidden;
+
+  h3 {
+    font-size: 1.05em;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--green-main);
+    padding: 0.8em 1em 0.2em;
+  }
+}
+
+.skill-swiper {
+  width: 100%;
+  display: block;
+  padding: 0.7em 0;
+  mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent);
+}
+
+.skill-slide {
+  width: auto;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    background-color: var(--green-main);
+    color: var(--white-main);
+    border: 0.08em solid var(--green-active);
+    border-radius: 999px;
+    padding: 0.5em 1em;
+    font-size: 0.95em;
+    box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media (max-width: 600px) {
+  h2 {
+    font-size: 2em;
+  }
+
+  .skill-line h3 {
+    font-size: 0.9em;
+  }
+
+  .skill-slide {
+    span {
+      font-size: 0.85em;
+      padding: 0.4em 0.75em;
+    }
+  }
+}
