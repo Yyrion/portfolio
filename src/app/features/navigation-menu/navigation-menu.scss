@@ -1,3 +1,52 @@
+.desktop-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--green-main);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0.1em 0.6em var(--shadow-light);
+
+  nav {
+    max-width: 75em;
+    margin: 0 auto;
+    padding: 0 1.5em;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5em;
+
+    button {
+      padding: 0.5em 1.1em;
+      font-size: 0.95em;
+      font-weight: 500;
+      color: var(--gray-main);
+      background: none;
+      border: none;
+      border-radius: 0.5em;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease;
+
+      &:hover {
+        background-color: var(--green-overlay);
+        color: var(--white-main);
+      }
+
+      &:active {
+        background-color: var(--green-active);
+        color: var(--white-main);
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--green-focus);
+        outline-offset: 0.2em;
+      }
+    }
+  }
+}
+
 .mobile-menu-button {
   position: fixed;
   bottom: 1.5em;
