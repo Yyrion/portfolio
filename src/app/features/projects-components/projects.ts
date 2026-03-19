@@ -18,6 +18,10 @@ export class Projects {
   projectsList: Project[] = projects;
   visibleProjects: Project[] = [];
   currentPageIndex: number = 0;
+  swiperBreakpoints: Record<number, { slidesPerView: number; spaceBetween: number }> = {
+    768: { slidesPerView: 2, spaceBetween: 20 },
+    1024: { slidesPerView: 3, spaceBetween: 24 },
+  };
 
   constructor() {
     this.visibleProjects = this.projectsList.slice(0, 3);
@@ -28,6 +32,5 @@ export class Projects {
     const swiperInstance = customEvent.detail?.[0];
 
     this.currentPageIndex = swiperInstance?.activeIndex ?? 0;
-    console.log('Slide changed to index:', this.currentPageIndex);
   }
 }

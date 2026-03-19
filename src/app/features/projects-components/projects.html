@@ -6,6 +6,7 @@
       class="swiper-container"
       [slidesPerView]="1"
       [spaceBetween]="20"
+      [breakpoints]="swiperBreakpoints"
       (swiperslidechange)="onSwiperSlideChange($event)">
       @for (project of projectsList; track $index) {
         <swiper-slide>  
