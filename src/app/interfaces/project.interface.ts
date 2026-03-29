@@ -1,5 +1,6 @@
 export interface Project {
   title: string;
+  type: 'Personal' | 'Academic' | 'Professional';
   description: string;
   shortDescription: string;
   imageUrl: string | null;

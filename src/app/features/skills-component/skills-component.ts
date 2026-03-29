@@ -58,8 +58,4 @@ export class SkillsComponent {
     },
   ];
 
-  protected getLoopedSkills(skills: string[]): string[] {
-    return [...skills, ...skills];
-  }
-
 }

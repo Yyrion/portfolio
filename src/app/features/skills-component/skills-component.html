@@ -6,26 +6,7 @@
         <article class="skill-line">
           <h3>{{ category.title }}</h3>
 
-          <swiper-container
-            class="skill-swiper"
-            [attr.aria-label]="category.ariaLabel"
-            [slidesPerView]="'auto'"
-            [spaceBetween]="6"
-            [loop]="true"
-            [freeMode]="true"
-            [autoplay]="true"
-            [attr.autoplay-delay]="0"
-            [attr.autoplay-disable-on-interaction]="false"
-            [attr.autoplay-pause-on-mouse-enter]="false"
-            [attr.autoplay-reverse-direction]="category.reverse"
-            [allowTouchMove]="true"
-          >
-            @for (skill of getLoopedSkills(category.skills); track $index) {
-              <swiper-slide class="skill-slide">
-                <span>{{ skill }}</span>
-              </swiper-slide>
-            }
-          </swiper-container>
+          
         </article>
       }
     </div>

@@ -2,6 +2,18 @@
 <article class="project-preview">
   <div class="preview__header">
     <h3 class="preview__title">{{ projectPreview.title }}</h3>
+    @if (projectPreview.type === 'Personal') {
+      <h4 class="preview__type">Projet personnel</h4>
+    } @else if (projectPreview.type === 'Academic') {
+      <h4 class="preview__type">Projet créé lors des études</h4>
+    } @else if (projectPreview.type === 'Professional') {
+      <h4 class="preview__type">Expérience professionnelle</h4>
+    }
+    <div class="preview__tags">
+      @for (tag of projectPreview.tags; track $index) {
+        <span class="preview__tag">{{ tag }}</span>
+      }
+    </div>
   </div>
 
   @if (projectPreview.imageUrl !== null) {
@@ -11,12 +23,6 @@
   }
 
   <div class="preview__content">
-    <p class="preview__description">{{ projectPreview.shortDescription }}</p>
-  </div>
-
-  <div class="preview__tags">
-    @for (tag of projectPreview.tags; track $index) {
-      <span class="preview__tag">{{ tag }}</span>
-    }
+    <p class="preview__description" [innerHTML]="projectPreview.description"></p>
   </div>
 </article>
