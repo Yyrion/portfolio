@@ -46,13 +46,16 @@ h2 {
     box-shadow: none;
 
     .skill-icon {
-      width: 2em;
-      height: 2em;
+      width: 1.6rem;
+      height: 1.6rem;
       flex: 0 0 auto;
       display: block;
-      object-fit: cover;
-      border-radius: 50%;
+      object-fit: contain;
+      border-radius: 0.35rem;
+      background: var(--white-main);
+      padding: 0.12rem;
       overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
 
       circle {
         fill: var(--green-main);
@@ -68,6 +71,11 @@ h2 {
         fill: var(--white-main);
         font-size: 0.75em;
         font-weight: 700;
+      }
+
+      /* Small per-logo adjustments when necessary (avoid large visual artifacts) */
+      &[src*="MongoDB"] {
+        transform: scale(0.9);
       }
     }
 

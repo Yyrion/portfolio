@@ -9,9 +9,14 @@
     } @else if (projectPreview.type === 'Professional') {
       <h4 class="preview__type">Expérience professionnelle</h4>
     }
-    <div class="preview__tags">
+    <div class="preview__tags" role="list" aria-label="Compétences du projet">
       @for (tag of projectPreview.tags; track $index) {
-        <span class="preview__tag">{{ tag }}</span>
+        <span class="preview__tag" role="listitem">
+          @if (getIconPath(tag)) {
+            <img class="preview__tag-icon" src="{{ getIconPath(tag) }}" alt="{{ tag }} logo" />
+          }
+          <span class="preview__tag-label">{{ tag }}</span>
+        </span>
       }
     </div>
   </div>
@@ -19,6 +24,25 @@
   @if (projectPreview.imageUrl !== null) {
     <div class="preview__image" [class.project-preview__image--empty]="!projectPreview.imageUrl">
       <img [attr.src]="projectPreview.imageUrl" [alt]="projectPreview.title" />
+
+      <div class="preview__overlay" aria-hidden="false">
+        @if (projectPreview.projectUrl !== null) {
+          <a
+            class="preview__btn preview__btn--primary"
+            [attr.href]="projectPreview.projectUrl"
+            target="_blank"
+            rel="noopener"
+          >Voir</a>
+        }
+        @if (projectPreview.githubUrl !== null) {
+          <a
+            class="preview__btn preview__btn--secondary"
+            [attr.href]="projectPreview.githubUrl"
+            target="_blank"
+            rel="noopener"
+          >Code</a>
+        }
+      </div>
     </div>
   }
 

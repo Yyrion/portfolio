@@ -1,0 +1,42 @@
+<svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2A3635"/>
+      <stop offset="100%" stop-color="#4F6B68"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="220" height="220" rx="24" fill="#000000"/>
+
+  <!-- Subtle overlay -->
+  <rect x="10" y="10" width="200" height="200" rx="20" fill="rgba(217,217,217,0.05)"/>
+
+  <!-- Dev brackets -->
+  <path d="M80 70 L55 110 L80 150"
+        stroke="url(#accent)"
+        stroke-width="6"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <path d="M140 70 L165 110 L140 150"
+        stroke="url(#accent)"
+        stroke-width="6"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <!-- Monogram ER -->
+  <text x="110" y="125"
+        text-anchor="middle"
+        font-size="42"
+        font-family="Inter, Arial, sans-serif"
+        fill="#D9D9D9"
+        font-weight="600">
+    ER
+  </text>
+
+  <!-- Small dot accent -->
+  <circle cx="160" cy="60" r="5" fill="#4F6B68"/>
+</svg>

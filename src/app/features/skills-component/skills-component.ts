@@ -36,6 +36,13 @@ export class SkillsComponent {
       skills: ['NestJS', 'Symfony', 'Laravel', 'Node.js', 'REST API'],
     },
     {
+      title: 'Bases de données',
+      ariaLabel: 'Compétences Bases de données',
+      reverse: false,
+      speed: 4800,
+      skills: ['MySQL', 'PostgreSQL', 'MongoDB', 'Supabase'],
+    },
+    {
       title: 'Development Desktop',
       ariaLabel: 'Compétences Development Desktop',
       reverse: false,
@@ -79,6 +86,9 @@ export class SkillsComponent {
     'Unity': 'unity-svgrepo-com.svg',
     'Godot Engine': 'godot-svgrepo-com.svg',
     'Git': 'git-svgrepo-com.svg',
+    'PostgreSQL': 'PostgreSQL_logo.3colors.svg',
+    'MongoDB': 'MongoDB_Logomark_SlateBlue.svg',
+    'Supabase': 'supabase-logo-icon.svg',
     // UX Design / Responsive Design / Agile: no dedicated logos -> fallback
   };
 
@@ -113,6 +123,11 @@ export class SkillsComponent {
       'Responsive Design': 'RWD',
       'Agile': 'AG',
     };
+
+    // add database initials
+    if (!map['PostgreSQL']) map['PostgreSQL'] = 'PG';
+    if (!map['MongoDB']) map['MongoDB'] = 'MDB';
+    if (!map['Supabase']) map['Supabase'] = 'SB';
 
     const key = (skill || '').trim();
     if (map[key]) return map[key];

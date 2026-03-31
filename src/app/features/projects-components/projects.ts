@@ -24,7 +24,7 @@ export class Projects {
   };
 
   constructor() {
-    this.visibleProjects = this.projectsList.slice(0, 3);
+    this.visibleProjects = this.projectsList.slice(0, 4);
   }
 
   onSwiperSlideChange(event: Event): void {
@@ -32,5 +32,56 @@ export class Projects {
     const swiperInstance = customEvent.detail?.[0];
 
     this.currentPageIndex = swiperInstance?.activeIndex ?? 0;
+  }
+
+  prev(): void {
+    const el = document.querySelector('swiper-container.swiper-container') || document.querySelector('swiper-container');
+    const swiperEl: any = el as any;
+    if (!swiperEl) return;
+    try {
+      if (swiperEl.swiper && typeof swiperEl.swiper.slidePrev === 'function') {
+        swiperEl.swiper.slidePrev();
+        return;
+      }
+      if (typeof swiperEl.slidePrev === 'function') {
+        swiperEl.slidePrev();
+        return;
+      }
+      if (swiperEl.getSwiper && typeof swiperEl.getSwiper === 'function') {
+        const s = swiperEl.getSwiper();
+        if (s && typeof s.slidePrev === 'function') s.slidePrev();
+        return;
+      }
+      // fallback: dispatch keyboard event to try to trigger default navigation
+      const keyboardEvent = new KeyboardEvent('keydown', { key: 'ArrowLeft' });
+      document.dispatchEvent(keyboardEvent);
+    } catch (e) {
+      // silent
+    }
+  }
+
+  next(): void {
+    const el = document.querySelector('swiper-container.swiper-container') || document.querySelector('swiper-container');
+    const swiperEl: any = el as any;
+    if (!swiperEl) return;
+    try {
+      if (swiperEl.swiper && typeof swiperEl.swiper.slideNext === 'function') {
+        swiperEl.swiper.slideNext();
+        return;
+      }
+      if (typeof swiperEl.slideNext === 'function') {
+        swiperEl.slideNext();
+        return;
+      }
+      if (swiperEl.getSwiper && typeof swiperEl.getSwiper === 'function') {
+        const s = swiperEl.getSwiper();
+        if (s && typeof s.slideNext === 'function') s.slideNext();
+        return;
+      }
+      const keyboardEvent = new KeyboardEvent('keydown', { key: 'ArrowRight' });
+      document.dispatchEvent(keyboardEvent);
+    } catch (e) {
+      // silent
+    }
   }
 }

@@ -2,18 +2,26 @@
   <div class="container projects-container">
     <h2>Mes Projets</h2>
 
-    <swiper-container
-      class="swiper-container"
-      [slidesPerView]="1"
-      [spaceBetween]="20"
-      [breakpoints]="swiperBreakpoints"
-      (swiperslidechange)="onSwiperSlideChange($event)">
-      @for (project of projectsList; track $index) {
-        <swiper-slide>  
-          <app-project-preview-component [projectPreview]="project"></app-project-preview-component>
-        </swiper-slide>
-      }
-    </swiper-container>
+    <p class="projects-hint">Glisser ou utiliser les flèches ← →</p>
+
+    <div class="swiper-wrap">
+      <button class="projects-nav projects-nav--prev" (click)="prev()" aria-label="Précédent">‹</button>
+
+      <swiper-container
+        class="swiper-container"
+        [slidesPerView]="1"
+        [spaceBetween]="20"
+        [breakpoints]="swiperBreakpoints"
+        (swiperslidechange)="onSwiperSlideChange($event)">
+        @for (project of projectsList; track $index) {
+          <swiper-slide>  
+            <app-project-preview-component [projectPreview]="project"></app-project-preview-component>
+          </swiper-slide>
+        }
+      </swiper-container>
+
+      <button class="projects-nav projects-nav--next" (click)="next()" aria-label="Suivant">›</button>
+    </div>
 
     <div class="carousel__dots" aria-label="Indicateur de page">
       @for (project of projectsList; track $index) {
