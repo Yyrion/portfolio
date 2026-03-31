@@ -6,7 +6,16 @@
         <article class="skill-line">
           <h3>{{ category.title }}</h3>
 
-          
+          <div class="skills-container" role="list" aria-label="Compétences: {{ category.title }}">
+            @for (skill of category.skills; track skill) {
+              <span class="skill" role="listitem">
+                @if (getIconPath(skill)) {
+                  <img class="skill-icon" src="{{ getIconPath(skill) }}" alt="{{ skill }} logo" />
+                }
+                <span class="skill-label">{{ skill }}</span>
+              </span>
+            }
+          </div>
         </article>
       }
     </div>
