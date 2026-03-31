@@ -32,6 +32,16 @@ export const projects : Project[] = [
     tags: ['Python', 'Symfony', 'JQuery', 'Tailwind CSS', 'DevExtreme', 'MongoDB', 'MySQL']
   },
   {
+    title: "Orkestra",
+    type: 'Personal',
+    description: "<strong>Orkestra — application web full-stack</strong> de gestion de projets inspirée de Trello. <br/>Authentification JWT, tableau de bord, gestion de projets/tâches et vue Gantt. Organisé dans le cadre d'un hackathon d'une journée au sein d'Ynov.",
+    shortDescription: "Application web full-stack de gestion de projets (React + Node.js + Prisma).",
+    imageUrl: null,
+    githubUrl: "https://github.com/Yyrion/Orkestra",
+    projectUrl: null,
+    tags: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express', 'Prisma', 'PostgreSQL']
+  },
+  {
     title: "Bluz Thirst",
     type: 'Academic',
     description: "<strong>Jeu 2D shooter</strong> avec mode zombie solo. <br/>Mécanique de jeu itérative, courbe de difficulté progressive.",
